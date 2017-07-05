@@ -1,0 +1,139 @@
+nav{
+  display: inherit;
+  list-style: none;
+  width: 50%;
+  min-width: 1000px;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+.top-menu {
+  .menu__item {
+    margin: 0;
+    &.current .menu__link {
+      color: #d94f5c;
+      transition: color 0.7s 0.2s;
+    }
+    &:active:not(.menu__item.current) ~ .menu__lines{
+      &::before,
+      &::after {
+        transition: transform 0s;
+      }
+      &::before {
+        transform: scale3d(1, 1, 1);
+      }
+      &::after {
+        transform: scale3d(1, 0, 1);
+      }
+    }
+    &:nth-child(1).menu__item.current ~ .menu__lines {
+      transform: translate3d(0, 0, 0);
+    }
+
+    &:nth-child(2).menu__item.current ~ .menu__lines {
+      transform: translate3d(100%, 0, 0);
+    }
+
+    &:nth-child(3).menu__item.current ~ .menu__lines {
+      transform: translate3d(200%, 0, 0);
+    }
+
+    &:nth-child(4).menu__item.current ~ .menu__lines {
+      transform: translate3d(300%, 0, 0);
+    }
+
+    &:nth-child(5).menu__item.current ~ .menu__lines {
+      transform: translate3d(400%, 0, 0);
+    }
+  }
+  .menu__link {
+    width: 250px;
+    display: inline-block;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    color: #b5b5b5;
+    -webkit-transition: color 0.3s 0.2s;
+    transition: color 0.3s 0.2s;
+    &:hover,
+    &:focus {
+      color: #929292;
+    }
+  }
+   .menu__lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    pointer-events: none;
+    border: 3px solid #d94f5c;
+    border-width: 3px 0;
+    transition: transform 0.5s 0.2s;
+    transition-timing-function: cubic-bezier(1, 0.01, 0, 1.22);
+    /* vertical lines */
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: calc(100% - 6px);
+      height: 100%;
+      border: 3px solid #d94f5c;
+      border-width: 0 3px;
+      transform-origin: 0% 50%;
+    }
+    /* animates out at transition start */
+    &::before {
+      transform: scale3d(1, 0, 1);
+      transition: transform 0.2s ease;
+    }   
+    /* animates back in at transition end */
+    &::after {
+      transform: scale3d(1, 1, 1);
+      transition: transform 0.2s ease 0.7s;
+    }
+  }
+}
+@media screen and (max-width:55em) {
+  .top-menu{
+    .menu__item{
+      :active:not(.menu__item.current) ~ .menu__lines::after {
+        transform: scale3d(0, 1, 1);
+      }
+      &:nth-child(1).menu__item.current ~ .menu__lines {
+        transform: translate3d(0, 0, 0);
+      }
+
+      &:nth-child(2).menu__item.current ~ .menu__lines {
+        transform: translate3d(0, 100%, 0);
+      }
+
+      &:nth-child(3).menu__item.current ~ .menu__lines {
+        transform: translate3d(0, 200%, 0);
+      }
+
+      &:nth-child(4).menu__item.current ~ .menu__lines {
+        transform: translate3d(0, 300%, 0);
+      }
+
+      &:nth-child(5).menu__item.current ~ .menu__lines {
+        transform: translate3d(0, 400%, 0);
+      }
+    }
+    .menu__lines {
+      height: 20%;
+      border-width: 0 2px;
+      /* horizontal lines */
+      &::before,
+      &::after {
+        border-width: 2px 0;
+        transform-origin: 50% 0%;
+      }
+      &::before {
+        transform: scale3d(0, 1, 1);
+      }
+    }
+  }
+}
