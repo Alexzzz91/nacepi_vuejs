@@ -1,18 +1,15 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    выберите дату и время
+  <div class="na-cepi__reserv">
+    <img src="/RJuN9U3yoaI.jpg" class="na-cepi__reserv-background">
+    <div class="na-cepi__reserv-container">
+      
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Reserv',
-  data () {
-    return {
-      msg: 'Бронирование визита'
-    }
-  }
 }
 </script>
 

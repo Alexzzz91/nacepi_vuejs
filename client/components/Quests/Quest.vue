@@ -1,8 +1,9 @@
 <template>
 	<div class="na-cepi__quests--item">
-		<div class="na-cepi__quests--item__container">
+		<!-- <router-link v-if="active" :to='link'> -->
+		<div class="na-cepi__quests--item__container" :class="{'noActive':!active}">
 			<img v-if="!!img" :src='img' class="na-cepi__quests--item__img" :alt='name'>
-			<img v-else src='/tjomnyj_koidor.jpg' class="na-cepi__quests--item__noimg" alt='Квест в разработке' >
+			<img v-else src='/tjomnyj_koidor.jpg' class="na-cepi__quests--item__img na-cepi__quests--item__noimg" alt='Квест в разработке' >
 			<div class="na-cepi__quests--item__top">
 				<div v-if="!!name" class="na-cepi__quests--item__name" > {{name}} </div>
 				<div v-if="!!limitation" class="na-cepi__quests--item__limitation" > {{limitation}} </div>
@@ -17,6 +18,7 @@
 			</div>
 		</div>
 		<div class="na-cepi__quests--item--overlay"></div>
+		<!-- </router-link> -->
 	</div>
 </template>
 
@@ -27,6 +29,9 @@ export default {
 	props: {
 		active: {
 			type:Boolean
+		},	
+		link: {
+			type:String
 		},	
 		name: {
 			type:String

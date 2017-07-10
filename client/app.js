@@ -4,10 +4,13 @@ import App from './components/App'
 import router from './router'
 import store from './store'
 import VueSVGIcon from 'vue-svgicon'
+import yandexMap from 'vue-yandex-maps'
 
 import './styles/app.scss'
 
 sync(store, router)
+
+Vue.use(yandexMap)
 
 Vue.use(VueSVGIcon)
 

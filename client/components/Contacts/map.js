@@ -1,0 +1,1 @@
+export default '<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ac94a028af30edc86f738ca00416eaad1476f197a4bc9824e76f47c00c8b79188&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>'
