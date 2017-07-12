@@ -1,3 +1,133 @@
-{
-	
+&__reserv{
+	position: relative;
+	margin-bottom: 20px;
+	width: 100%;
+	height: 100%;
+	min-height: 855px;
+	&-top{
+		color: white;
+		&-label{
+			text-align: center;
+			text-shadow: 1px 1px 2px black, 0 0 1em red;
+		}
+		&-container{
+			position: relative;
+			&__limitation{
+				position: absolute;
+				top: 50px;
+				right: 50px;
+				border-radius: 50%;
+				border: 5px solid red;
+				height: 70px;
+				width: 70px;
+				text-align: center;
+				line-height: 70px;
+				color: red;
+				font-weight: 800;
+				text-shadow: 5px 3px 10px black, 1px 2px 1em red;
+			}
+			&-bottom{
+				position: absolute;
+				bottom: 65px;
+				width: 100%;
+				display: flex;
+				justify-content: center;
+			}
+			&__time{
+				margin-right: 50px;
+			}
+			&__team-count{
+				margin-left: 50px;
+			}
+		}
+	}
+	&-about{
+		background: rgba(0, 0, 0, 0.5);
+		padding: 25px;
+		&-container{
+			color: white;
+			text-align: center;
+		}
+	}
+	&-container{
+	  background: rgba(255, 255, 255, 0.15);
+	  box-shadow: 0 0px 100px rgba(255, 255, 255, 0.65);
+	}
+	&-background{
+	  position: absolute;
+	  z-index: -1;
+	  width: 100%;
+	}
+	.week{
+		height: 850px;
+	    overflow: auto;
+    	padding: 0 20px;
+		display: flex;
+		flex-direction: column;
+		.row{
+			display: flex;
+			margin: 20px 0;
+			&:hover{
+				.day{
+					background: rgba(255, 255, 255, 0.45);
+					color: black;
+				}
+			}
+			.reserve-time,
+			.day{
+				display: flex;
+			}
+			.day{
+				border: 2px solid white;
+			    flex-direction: column;
+			    padding: 2px;
+			    font-size: 15px;
+			    color: white;
+			    background: transparent;
+			    min-width: 115px;
+			    transition: .5s;
+			    margin-right: 20px;
+				p{
+					text-align: center;
+					margin: 1px;
+				}
+				&-name{
+
+				}
+				&-number{
+					
+				}
+				&-mounth{
+					
+				}
+			}
+			.reserve-time{
+				width: 100%;
+			    font-size: 16px;
+			    justify-content: space-between;
+			    &-item{
+			    	display: flex;
+					flex-direction: column;
+					align-items: center;
+					border: 1px solid white;
+					color: white;
+					justify-content: center;
+					padding: 0 10px;
+					background: transparent;	
+					transition: .5s;
+					cursor: pointer;
+					font-weight: 800;
+					&:hover{
+						background: rgba(255, 255, 255, 0.45);
+						color: black;
+					}
+					.time,
+					.price{
+						margin: 5px;
+
+					}
+			    }
+			}
+		}
+	}
 }
