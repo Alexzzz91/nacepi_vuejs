@@ -2,12 +2,14 @@
   <div id="app">
     <header class="na-cepi-up">
       <router-link class="na-cepi__logo" to="/">
-        <svgicon icon="logo" width="200" height="149" color="#fff"></svgicon>
+        <svgicon icon="logo" width="130" height="100" color="#fff"></svgicon>
       </router-link>
       <navigationMenu></navigationMenu>
     </header>
     <div class="na-cepi__body">
-      <router-view></router-view>
+      <transition name="body">
+        <router-view></router-view>
+      </transition>
     </div>
     <footer class="na-cepi__footer">
       <p class="na-cepi__footer__text"> Следите за нами </p>

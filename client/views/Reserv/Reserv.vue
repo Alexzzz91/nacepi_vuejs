@@ -1,13 +1,13 @@
 <template>
   <div class="na-cepi__reserv">
     <div class="na-cepi__reserv-top">
-      <h1 class="na-cepi__reserv-top-label">Хоррор-квест "Вуду. История Киры"</h1>
+      <h1 class="na-cepi__reserv-top-label">{{ name }}</h1>
       <div class="na-cepi__reserv-top-container">
-        <img src="/RJuN9U3yoaI.jpg" alt="">
-        <div class="na-cepi__reserv-top-container__limitation"> 16+ </div>
+        <img :src='image' alt="">
+        <div class="na-cepi__reserv-top-container__limitation">{{ limitation }}</div>
         <div class="na-cepi__reserv-top-container-bottom">
-          <div class="na-cepi__reserv-top-container__time"> 60 минут </div>
-          <div class="na-cepi__reserv-top-container__team-count"> 2-5 человек </div>
+          <div class="na-cepi__reserv-top-container__time"> {{time}} </div>
+          <div class="na-cepi__reserv-top-container__team-count">  {{teamCount}} человек </div>
         </div>
       </div>
     </div>
@@ -32,7 +32,13 @@
     </div>
     <img src="/6co-eHWzq7k.jpg" class="na-cepi__reserv-background">
     <div class="na-cepi__reserv-container">
-      <reserv-component/>
+      <reserv-component 
+        :name='name'
+        :limitation='limitation'
+        :image='image'
+        :time='time'
+        :teamCount='teamCount'
+       />
     </div>
   </div>
 </template>
@@ -43,6 +49,15 @@ export default {
   name: 'Reserv',
   components:{
     ReservComponent
-  }
+  },
+  data () {
+    return {
+      name: 'Хоррор-квест "Вуду. История Киры"',
+      limitation: '16+',
+      image: '/RJuN9U3yoaI.jpg', 
+      time : ' 60 минут ',
+      teamCount: '2-5'
+    }
+  },
 }
 </script>

@@ -3,6 +3,14 @@
 	margin: auto;
 	box-sizing: border-box;
 	position: relative;
+	padding-top: 150px;
+	.body-enter-active, .body-leave-active {
+		transition: opacity .5s;
+	}
+	.body-enter, .body-leave-to /* .fade-leave-active in <2.1.8 */ {
+		transition: opacity .5s;
+		opacity: 0;
+	}
 	&--overlay{
 		position: absolute;
 		height: 100%;
