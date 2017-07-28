@@ -6,6 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const config = require('./config')
 const _ = require('./utils')
 
+console.log(process.env.NODE_ENV)
 module.exports = {
   entry: {
     client: './client/index.js'

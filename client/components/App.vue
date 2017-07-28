@@ -12,8 +12,11 @@
       </transition>
     </div>
     <footer class="na-cepi__footer">
-      <p class="na-cepi__footer__text"> Следите за нами </p>
-      <socialIcons></socialIcons>
+      <div class="na-cepi__footer-container">
+        <p class="na-cepi__footer__text"> Следите за нами </p>
+        <socialIcons></socialIcons>
+        <mirQuestov />
+      </div>
     </footer>
   </div>
 </template>
@@ -23,11 +26,13 @@
 import '../compiled-icons/logo'
 import navigationMenu from 'components/navigationMenu/navigationMenu'
 import socialIcons from 'components/socialIcons/socialIcons'
+import mirQuestov from 'components/mirQuestov/mirQuestov'
 export default {
   name: 'app',
   components: {
     navigationMenu,
-    socialIcons
+    socialIcons,
+    mirQuestov
   }
 }
 
